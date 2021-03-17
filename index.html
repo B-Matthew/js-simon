@@ -16,14 +16,18 @@
       var arrUser = [];
 
       function getRndNum() {
-        while ( arrRnd.length < 5) {
 
           var rndNum = Math.floor(Math.random() * 1000);
-          arrRnd.push(rndNum);
+          return rndNum;
         }
 
+      function getRndArray() {
 
-        alert("Memorizza questi numeri: " + arrRnd);
+        while ( arrRnd.length < 5) {
+        arrRnd.push(getRndNum());
+      }
+
+      alert("Memorizza questi numeri: " + arrRnd);
       }
 
       function numUser() {
@@ -52,7 +56,7 @@
         setTimeout(numUser,3000);
       }
 
-      getRndNum();
+      getRndArray();
       timer();
     </script>
   </body>
